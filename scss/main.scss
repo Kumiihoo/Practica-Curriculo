@@ -1,0 +1,130 @@
+@import 'variables';
+@import 'funciones';
+
+* {
+    font-family: $fonts;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: map-get($colors, "color-background");
+    height: 100vh;
+    overflow: hidden;
+    @include flexible(flex, row, nowrap, center, center);
+}
+
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 21cm;
+    height: 29.7cm;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 1.5%;
+    padding-bottom: 2%;
+    box-shadow: 0 0 0.5cm map-get($colors, "color-box-shadow");
+    background-color: map-get($colors, "color-box");
+}
+
+aside{
+    background-color: map-get($colors, "color-aside");
+    border: 1px solid;
+    width: 35%;
+    img{
+        width: 100%;
+        padding: 0%;
+    }
+    h2{
+        padding: 5%;
+        margin: 0;
+    }
+    hr{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    a:link, a:visited, a:active {
+        color: map-get($colors, "color-text");
+        text-decoration:none;
+        font-weight: normal;
+    }
+    .contact {
+        padding-left: 7%;
+        padding-right: 7%;
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .lang-es::marker {
+        content: "💃 ";
+    }
+    
+    .lang-en::marker {
+        content: "💂‍♂️ ";
+    }
+    
+    .lang-jp::marker {
+        content: "🎎 ";
+    }
+}
+
+section{
+    width: 65%;
+    padding-left: 2.5%;
+    padding-right: 0;
+    i[class~="fa-brands"]{
+        transform: scale(4);
+        width: 5%;
+        padding: 5%;
+        margin: 5%;
+    }
+}
+
+.linea-tiempo{
+  display: flex;
+  position: relative;
+  width: 500px;
+}
+
+.linea-tiempo::before{
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: map-get($colors, "color-linea");
+  left:  30%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.momento{
+    width: 50%;
+        h3{
+        margin-left: 7%;
+        text-align: left;
+        width: 45%;
+    }
+}
+
+.descripcion{
+    width: 50%;
+    h3{
+        font-size: normal;
+        font-weight: 100;
+        text-align: start;
+        margin-left: -30%;
+    }
+}
+
+.descripcion h3::after{
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  right: calc(70% - 11.5px);
+  height: 20px;
+  width: 20px;
+  background-color: map-get($colors, "color-box");
+  border-radius: 50%;
+  border: 3px solid;
+}
